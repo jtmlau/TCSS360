@@ -9,7 +9,7 @@ public class User {
 	
 	//User Constructor
 	public User (String firstName, String lastName, String email) {
-		
+		//fun comment
 	}
 	
 }
