@@ -10,6 +10,7 @@ public class User {
 	//User Constructor
 	public User (String firstName, String lastName, String email) {
 		//another comment to test pull requests 
+		//the needs of the many, outweigh the needs of the few -Spock
 	}
 	
 }
