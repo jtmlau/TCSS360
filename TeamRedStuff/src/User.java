@@ -47,6 +47,8 @@ public class User {
 		}
 	
 		
+	public User (String firstName, String lastName, String email) {
+		//fun comment
 	}
 	
 	public void setLastName(final String newLastName) {
