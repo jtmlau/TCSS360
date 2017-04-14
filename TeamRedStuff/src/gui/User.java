@@ -41,26 +41,4 @@ public class User {
 	public String getEmail(){
 		return myEmail;
 	}
-	
-	public void setFirstName(final String newFirstName) {
-		if (theEmail != null) {
-			myFirstName = newFirstName;
-		}
-	
-		
-	public User (String firstName, String lastName, String email) {
-		//fun comment
-	}
-	
-	public void setLastName(final String newLastName) {
-		if (theLastName != null) {
-			myLastName = newLastName;
-		}
-	}
-	
-	public void setEmail(final String newEmail) {
-		if (theEmail != null) {
-		myEmail = newEmail;
-		}
-	}
 }
