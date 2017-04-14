@@ -1,3 +1,4 @@
+package gui;
 /*
  * TCSS 360 - Software Development Team Red
  * User object stores the user's name and email.
@@ -47,6 +48,8 @@ public class User {
 		}
 	
 		
+	public User (String firstName, String lastName, String email) {
+		//fun comment
 	}
 	
 	public void setLastName(final String newLastName) {
