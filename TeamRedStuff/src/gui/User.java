@@ -16,7 +16,7 @@ public class User {
 	private String myLastName;
 	
 	//User Constructor
-	public User (final String theFirstName, final String theLastName,
+	public User(final String theFirstName, final String theLastName,
 			final String theEmail) {
 		if(theFirstName == null || theLastName ==  null
 				|| theEmail == null) {
