@@ -32,7 +32,7 @@ public class GUI extends JFrame {
 	 * A list of the contributors' names.
 	 */
 	private static final String NAMES[] = {
-			"Stan Hu"
+			"Stan Hu", "Jimmy Best", "Amanda Aldrich"
 	};
 	
     /**
