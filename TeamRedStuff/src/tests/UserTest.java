@@ -5,30 +5,47 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import gui.User;
+
 public class UserTest {
 
+	User tester;
+	
 	@Before
 	public void setUp() throws Exception {
+		tester = new User("amanda", "aldrich", "amlaldrich@gmail.com");
 	}
 
 	@Test
-	public void testUser() {
-		fail("Not yet implemented");
+	public void testUserFirstName() {
+		User newUser = new User("amanda", "aldrich", "amlaldrich@gmail.com");
+		assertEquals(tester.getFirstName(), newUser.getFirstName());
 	}
-
+	
 	@Test
-	public void testGetFirstName() {
-		fail("Not yet implemented");
+	public void testUserLastName() {
+		User newUser = new User("amanda", "aldrich", "amlaldrich@gmail.com");
+		assertEquals(tester.getLastName(), newUser.getLastName());
 	}
-
+	
 	@Test
-	public void testGetLastName() {
-		fail("Not yet implemented");
+	public void testUserEmail() {
+		User newUser = new User("amanda", "aldrich", "amlaldrich@gmail.com");
+		assertEquals(tester.getEmail(), newUser.getEmail());
 	}
-
-	@Test
-	public void testGetEmail() {
-		fail("Not yet implemented");
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testExceptionFirstName(){
+		User nullUser = new User(null, "Kirk", "enterprise@starfleet.org");
 	}
-
-}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testExceptionLastName(){
+		User nullUser = new User("James", null, "enterprise@starfleet.org");
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testException(){
+		User nullUser = new User("James", "Kirk", null);
+	}
+}	
