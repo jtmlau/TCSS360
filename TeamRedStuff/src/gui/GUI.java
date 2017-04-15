@@ -38,7 +38,7 @@ public class GUI extends JFrame {
 	 * A list of the contributors' names.
 	 */
 	private static final String NAMES[] = {
-			"Stan Hu", "Jimmy Best", "Amanda Aldrich", "Taylor Riccetti"
+			"Stan Hu", "Jimmy Best", "Amanda Aldrich", "Taylor Riccetti", "Joshua Lau"
 	};
 	
     /**
@@ -127,4 +127,5 @@ public class GUI extends JFrame {
         }
         return sb.toString();
     } 
+    
 }
