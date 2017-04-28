@@ -22,8 +22,6 @@ public class User {
 				|| theEmail == null) {
 			throw new IllegalArgumentException("Illegal Parameters!");
 		}
-		//another comment to test pull requests 
-		//the needs of the many, outweigh the needs of the few -Spock
 		
 		myFirstName = theFirstName;
 		myLastName = theLastName;
