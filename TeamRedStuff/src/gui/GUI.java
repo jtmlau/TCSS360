@@ -30,7 +30,7 @@ import javax.swing.JTextField;
 public class GUI extends JFrame {
 
     /**
-	 * The generated serial version UID.
+	 * The generated serial version UID. 
 	 */
 	private static final long serialVersionUID = 2941318999657277463L;
 	
@@ -38,7 +38,7 @@ public class GUI extends JFrame {
 	 * A list of the contributors' names.
 	 */
 	private static final String NAMES[] = {
-			"Stan Hu", "Jimmy Best", "Amanda Aldrich", "Taylor Riccetti"
+			"Stan Hu", "Jimmy Best", "Amanda Aldrich", "Taylor Riccetti", "Joshua Lau"
 	};
 	
     /**
@@ -127,4 +127,5 @@ public class GUI extends JFrame {
         }
         return sb.toString();
     } 
+    
 }
