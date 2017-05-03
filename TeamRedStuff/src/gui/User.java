@@ -15,17 +15,20 @@ public class User {
 	
 	private String myLastName;
 	
+	private String myPassword;
+	
 	//User Constructor
 	public User(final String theFirstName, final String theLastName,
-			final String theEmail) {
+			final String theEmail, final String thePassword) {
 		if(theFirstName == null || theLastName ==  null
-				|| theEmail == null) {
+				|| theEmail == null || thePassword == null) {
 			throw new IllegalArgumentException("Illegal Parameters!");
 		}
 		
 		myFirstName = theFirstName;
 		myLastName = theLastName;
 		myEmail = theEmail;
+		myPassword = thePassword;
 	}
 	
 	public String getFirstName(){
@@ -38,5 +41,9 @@ public class User {
 	
 	public String getEmail(){
 		return myEmail;
+	}
+	
+	public String getPassword(){
+		return myPassword;
 	}
 }
