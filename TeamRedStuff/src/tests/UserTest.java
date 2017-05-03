@@ -7,6 +7,11 @@ import org.junit.Test;
 
 import gui.User;
 
+/**
+ * JUnit tests
+ * @author 
+ *
+ */
 public class UserTest {
 
 	User tester;
