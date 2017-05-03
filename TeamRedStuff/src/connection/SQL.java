@@ -18,14 +18,14 @@ import java.io.*;
 
 public class SQL {
 	
-	private static final String DB = "insanityx_newhs";
+	private static final String DB = "db";
 	
-	private static final String URL = "diverity.net";
+	private static final String URL = "test.net";
 	
-	private static final String USER = "insanityx";
+	private static final String USER = "user";
 	
 	private static final String PASS = "abc";
-	
+
 	private static final Properties properties;
 	static {
 		properties = new Properties();
