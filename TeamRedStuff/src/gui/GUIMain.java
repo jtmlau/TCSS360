@@ -10,6 +10,8 @@ import java.awt.EventQueue;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
+import connection.SQL;
+
 /**
  * The main class for the GUI.
  * @author Stan Hu
@@ -36,6 +38,7 @@ public final class GUIMain {
             public void run() {
                 setLookAndFeel();
                 new GUI().start();
+                SQL.connect();
             }
         });
     }
