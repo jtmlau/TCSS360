@@ -28,7 +28,7 @@ import connection.SQL;
 /**
  * The GUI itself.
  * @author Stan Hu, Taylor Riccetti 
- * @version 11 April 2016
+ * @version 11 April 2016 
  */
 public class GUI extends JFrame {
 

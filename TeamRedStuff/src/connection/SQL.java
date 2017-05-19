@@ -13,7 +13,7 @@ import gui.User;
 import java.io.*;
 
 /**
- * A class to handle SQL/database related operations.
+ * A class to handle SQL/database related operations. 
  */
 
 public class SQL {
