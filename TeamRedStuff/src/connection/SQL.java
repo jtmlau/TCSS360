@@ -18,19 +18,38 @@ import java.io.*;
 
 public class SQL {
 	
-	private static final String DB = "db";
+	private static final int[] INFO = {
+		313,328,343,289,328,313,346,361,358,283,328,301,355,310,343
+	};
 	
-	private static final String URL = "test.net";
+	private static final int[] INFO2 = {
+		298,313,352,301,340,313,346,361,136,328,301,346		
+	};
 	
-	private static final String USER = "user";
+	private static final int[] INFO3 = {
+		313,328,343,289,328,313,346,361,358
+	};
 	
-	private static final String PASS = "abc";
+	private static final int[] INFO4 = {
+		142,220,316,163,316,202,259,268,142,289
+	};
+	
+	private static final int[] INFO5 = {
+		334,289,343,343,355,331,340,298
+	};
+	
+	private static final int[] INFO6 = {
+		349,343,301,340
+	};
 
 	private static final Properties properties;
+	
+	private static User lastUser = null;
+	
 	static {
 		properties = new Properties();
-		properties.put("user", USER);
-		properties.put("password", PASS);
+		properties.put(make(INFO6), make(INFO3));
+		properties.put(make(INFO5), make(INFO4));
 	}
 	
 	public static Connection connection = null;
@@ -43,7 +62,7 @@ public class SQL {
 	public static synchronized void connect() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			connection = DriverManager.getConnection("jdbc:mysql://" + URL + "/" + DB, properties);
+			connection = DriverManager.getConnection("jdbc:mysql://" + make(INFO2) + "/" + make(INFO), properties);
 			System.out.println("Successfully connected to the database.");
 		} catch (Exception e) {
 			System.out.println("Error connecting to the database: "+ e);
@@ -58,6 +77,10 @@ public class SQL {
 	public static synchronized void updateUser(final User theClient) {
 		removeFromDB(theClient);
 		addToDB(theClient);
+	}
+	
+	public static User getLastUser() {
+		return lastUser;
 	}
 	
 	/**
@@ -78,6 +101,7 @@ public class SQL {
 				String lastName = results.getString(3);
 				String email = results.getString(4);
 				String password = results.getString(5);
+				lastUser = new User(firstName, lastName, email, password);
 				if (password.equals(theClient.getPassword())) {
 					return 1; //login success
 				} else {
@@ -115,6 +139,19 @@ public class SQL {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	/**
+	 * Generates a string from data.
+	 * @param theData The data to generate from.
+	 * @return A string created from the data/
+	 */
+	private static String make(final int[] theData) {
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < theData.length; i++) {
+			sb.append((char)(((theData[i])+2)/3));
+		}
+		return sb.toString();
 	}
 	
 	/**

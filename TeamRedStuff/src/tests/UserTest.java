@@ -9,7 +9,7 @@ import gui.User;
 
 /**
  * JUnit tests
- * @author 
+ * @author
  *
  */
 public class UserTest {
