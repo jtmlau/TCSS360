@@ -13,7 +13,7 @@ import gui.User;
 import java.io.*;
 
 /**
- * A class to handle SQL/database related operations.
+ * A class to handle SQL/database related operations. 
  */
 
 public class SQL {
@@ -79,8 +79,42 @@ public class SQL {
 		addToDB(theClient);
 	}
 	
+	/**
+	 * Returns the the last user who signed in.
+	 * @return The last user who signed in.
+	 */
 	public static User getLastUser() {
 		return lastUser;
+	}
+	
+	/**
+	 * Returns a list of users.
+	 * @return A list of users.
+	 */
+	public static synchronized String getAllUsers() {
+		String query = "SELECT * FROM `users`";
+		Statement statement = null;
+        final StringBuilder sb = new StringBuilder();
+        sb.append("First Name | Last Name | Email");
+		try {
+			statement = connection.createStatement();
+			ResultSet results = statement.executeQuery(query);
+			while (results.next()) {
+				int id = results.getInt(1);
+				String firstName = results.getString(2);
+				String lastName = results.getString(3);
+				String email = results.getString(4);
+				String password = results.getString(5);
+				User user = new User(firstName, lastName, email, password);
+		        sb.append(user.getFirstName() + " | " + user.getLastName() + 
+		        		" | " + user.getEmail());
+		        sb.append('\n');
+			}
+		} catch (SQLException e) {
+			System.out.println("Login error: " + e);
+			return ""; //error
+		}
+        return sb.toString();
 	}
 	
 	/**
