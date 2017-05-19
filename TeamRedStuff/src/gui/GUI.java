@@ -98,6 +98,24 @@ public class GUI extends JFrame {
             }
         });
         aboutTab.add(about);
+
+        JButton allUsers = new JButton("All Users");
+        allUsers.addActionListener(new ActionListener() {
+
+            /**
+             * Opens the "all users" page.
+             * @param theEvent The event reference.
+             */
+            @Override
+            public void actionPerformed(final ActionEvent theEvent) {
+                JOptionPane.showMessageDialog(GUI.this,
+                    SQL.getAllUsers(),
+                    "All Users", 
+                    JOptionPane.INFORMATION_MESSAGE);
+            }
+        });
+        aboutTab.add(allUsers);
+        
         
         JTextField loginEmail = new JTextField("Email", TEXT_WIDTH);
         
