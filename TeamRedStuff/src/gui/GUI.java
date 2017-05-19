@@ -138,6 +138,7 @@ public class GUI extends JFrame {
             	User user = new User("", "",
             			loginEmail.getText(), loginPassword.getText());
             	int code = SQL.login(user);
+            	user = SQL.getLastUser();
             	if (code == 0) {
             		int reply = JOptionPane.showConfirmDialog(GUI.this,
             			    "Email does not exist. Would you like to register instead?",
@@ -152,7 +153,7 @@ public class GUI extends JFrame {
             		}
             	} else if (code == 1) {
             		JOptionPane.showMessageDialog(GUI.this,
-            			    "Welcome back, " + firstName.getText() + " " + lastName.getText() + "!",
+            			    "Welcome back, " + user.getFirstName() + " " + user.getLastName() + "!",
             			    "",
             			    JOptionPane.PLAIN_MESSAGE);
             	} else if (code == 2) {
